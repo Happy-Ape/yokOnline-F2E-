@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="pragma" content="no-cache"/>
+    <meta http-equiv="content-type" content="no-cache, must-revalidate"/>
+    <link rel="icon" href="/img/asset-favicon.ico">
+    <title>优课在线--test002</title>
+</head>
+<body data-spy="scroll" data-target="#articleNavbar" data-offset="150">
+<!-- 页面头部 -->
+<!--#include virtual="/include/header.html"-->
+<div id="body">
+    <!--页面头部结束sss-->
+    <div class="article-banner">
+        <div class="banner-bg"></div>
+        <div class="banner-info">
+            <div class="banner-left">
+                <p class="tit">test002</p>
+                <p class="pic"><span class="new-pic">
+                    特惠价格￥288</span> <span class="old-pic">原价￥688
+                </span></p>
+                <p class="info">
+                    <a href="http://ucenter.yok.com/#/learning/4028830072638a37017264c7d0920005/0"
+                       v-if="learnstatus == 1" v-cloak>马上学习</a>
+                    <a href="#" @click="addopencourse" v-if="learnstatus == 2" v-cloak>立即报名</a>
+                    <a href="#" @click="buy" v-if="learnstatus == 3" v-cloak>立即购买</a>
+                    <span><em>难度等级</em>
+             中级
+                </span>
+                    <span id="score"><em>评分</em>5.0分</span>
+                    <span><em>授课模式</em>
+                      任务式学习
+                </span>
+                </p>
+            </div>
+            <div class="banner-rit">
+
+                    <p><img src="http://img.yok.com/group1/M00/00/00/wKgDgV7SHryAI2-oAAC-BK6canw865.png" alt="" width="270" height="156"></p>
+
+                <p class="vid-act"><span @click="collection" v-if="collectstatus == 0"> <i class="i-heart"></i>收藏 </span>
+                    <span @click="calCollection" v-if="collectstatus == 1"> <i class="have-heart"></i>取消收藏 </span>
+                    <span @click="share">分享 <i class="i-weixin"></i><i class="i-qq"></i></span></p>
+            </div>
+        </div>
+    </div>
+    <div class="article-cont">
+        <div class="tit-list">
+            <a href="javascript:;" id="articleClass" class="active">课程介绍</a>
+            <a href="javascript:;" id="articleItem">目录</a>
+        </div>
+        <div class="article-box">
+            <div class="articleClass" style="display: block">
+                <div class="article-cont">
+                    <div class="article-left-box">
+                        <div class="content">
+
+                            <div class="content-com suit">
+                                <div class="title"><span>适用人群</span></div>
+                                <div class="cont cktop">
+                                    <div>
+                                        <p>大学生</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-com course">
+                                <div class="title"><span>课程制作</span></div>
+                                <!--#include virtual="/teacher/teacher_info_template01.html"-->
+
+                            </div>
+                            <div class="content-com about">
+                                <div class="title"><span>课程介绍</span></div>
+                                <div class="cont cktop">
+                                    <div>
+                                        <p>test</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-com prob">
+                                <div class="title"><span>常见问题</span></div>
+                                <div class="cont">
+                                    <ul>
+                                        <li class="item"><span class="on-off"><i class="i-chevron-bot"></i> 我什么时候能够访问课程视频？</span>
+                                            <div class="drop-down">
+                                                <p>
+                                                    课程安排灵活，课程费用支付提供180天全程准入和资格证书。自定进度课程建议的最后期限，但你不会受到惩罚错过期限，只要你的证书在180天内。以会话为基础的课程可能要求你在截止日期前保持正轨，但如果你落后了，你可以切换到以后的会议，你完成的任何工作将与你转移。</p>
+                                            </div>
+                                        </li>
+                                        <li class="item"><span class="on-off"><i class="i-chevron-bot"></i> 如果需要额外的时间来完成课程会怎么样？</span>
+                                            <div class="drop-down">
+                                                <p>
+                                                    课程安排灵活，课程费用支付提供180天全程准入和资格证书。自定进度课程建议的最后期限，但你不会受到惩罚错过期限，只要你赚你的证书在180天内。以会话为基础的课程可能要求你在截止日期前保持正轨，但如果你落后了，你可以切换到以后的会议，你完成的任何工作将与你转移。</p>
+                                            </div>
+                                        </li>
+                                        <li class="item"><span class="on-off"><i class="i-chevron-bot"></i> 我支付本次课程之后会得到什么？</span>
+                                            <div class="drop-down">
+                                                <p>
+                                                    课程安排灵活，课程费用支付提供180天全程准入和资格证书。自定进度课程建议的最后期限，但你不会受到惩罚错过期限，只要你赚你的证书在180天内。以会话为基础的课程可能要求你在截止日期前保持正轨，但如果你落后了，你可以切换到以后的会议，你完成的任何工作将与你转移。</p>
+                                            </div>
+                                        </li>
+                                        <li class="item"><span class="on-off"><i class="i-chevron-bot"></i> 退款条例是如何规定的？</span>
+                                            <div class="drop-down">
+                                                <p>
+                                                    课程安排灵活，课程费用支付提供180天全程准入和资格证书。自定进度课程建议的最后期限，但你不会受到惩罚错过期限，只要你赚你的证书在180天内。以会话为基础的课程可能要求你在截止日期前保持正轨，但如果你落后了，你可以切换到以后的会议，你完成的任何工作将与你转移。</p>
+                                            </div>
+                                        </li>
+                                        <li class="item"><span class="on-off"><i class="i-chevron-bot"></i> 有专业的老师在线上答疑吗？</span>
+                                            <div class="drop-down">
+                                                <p>有的。</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="article-right-box">
+                        <div class="about-teach">
+                            <!--机构信息-->
+                            <!--#include virtual="/company/company_info_template.html"-->
+
+                        </div>
+                        <div class="learing-box">
+                            <div class="tit">看过该课的同学也在看</div>
+                            <div class="item-box">
+                                <div class="item-list hov">
+                                    <div class="infobox">
+                                        <div class="morebox"
+                                             style="background: url(/static/img/widget-titBg.png) no-repeat;">
+
+                                            <p class="top-tit"><a
+                                                        href="http://www.yok.com/course/detail/4028e58161bcf7f40161bcf8b77c0000.html">Spring
+                                                    Cloud实战</a></p>
+                                            <p class="top-lab">优课在线</p>
+                                            <p class="top-num">1134627次播放<span>5.0分</span></p>
+
+                                        </div>
+                                        <a>Spring Cloud实战</a>
+                                    </div>
+                                </div>
+                                <div class="item-list hov">
+                                    <div class="infobox">
+                                        <div class="morebox"
+                                             style="background: url(/static/img/widget-titBg.png) no-repeat;">
+
+                                            <p class="top-tit"><a
+                                                        href="http://www.yok.com/course/detail/4028e58161bd3b380161bd3bcd2f0000.html">Redis从入门到项目实战</a>
+                                            </p>
+                                            <p class="top-lab">优课在线</p>
+                                            <p class="top-num">3462937次播放<span>5.0分</span></p>
+
+                                        </div>
+                                        <a>Redis从入门到项目实战</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="articleItem" style="display: none">
+                <div class="article-cont-catalog">
+                    <div class="article-left-box">
+                        <div class="content">
+                                    <div class="item">
+                                        <div class="title act"><i class="i-chevron-top"></i>1</div>
+                                        <div class="about"></div>
+                                        <div class="drop-down" style="height: 100px;">
+                                            <ul class="list-box">
+                                                        <li @click="checkBuy('4028830072638a37017264c91f7f0009')" style="cursor: pointer">11</li>
+                                                        <li @click="checkBuy('4028830072638a37017264c8e96f0008')" style="cursor: pointer">12</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                        </div>
+                    </div>
+                    <div class="article-right-box">
+                        <div class="about-teach">
+                            <!--机构信息-->
+                            <!--#include virtual="/company/company_info_template.html"-->
+                        </div>
+                        <div class="learing-box">
+                            <div class="tit">看过该课的同学也在看</div>
+                            <div class="item-box">
+                                <div class="item-list hov">
+                                    <div class="infobox">
+                                        <div class="morebox"
+                                             style="background: url(/static/img/widget-titBg.png) no-repeat;">
+
+                                            <p class="top-tit"><a
+                                                        href="http://www.yok.com/course/detail/4028e58161bcf7f40161bcf8b77c0000.html">Spring
+                                                    Cloud实战</a></p>
+                                            <p class="top-lab">优课在线</p>
+                                            <p class="top-num">1134627次播放<span>5.0分</span></p>
+
+                                        </div>
+                                        <a>Spring Cloud实战</a>
+                                    </div>
+                                </div>
+                                <div class="item-list hov">
+                                    <div class="infobox">
+                                        <div class="morebox"
+                                             style="background: url(/static/img/widget-titBg.png) no-repeat;">
+
+                                            <p class="top-tit"><a
+                                                        href="http://www.yok.com/course/detail/4028e58161bd3b380161bd3bcd2f0000.html">Redis从入门到项目实战</a>
+                                            </p>
+                                            <p class="top-lab">优课在线</p>
+                                            <p class="top-num">3462937次播放<span>5.0分</span></p>
+
+                                        </div>
+                                        <a>Redis从入门到项目实战</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup-box" style="display: none">
+        <div class="mask"></div>
+        <!--支付弹窗- start -->
+        <div class="popup-pay-box">
+            <div class="title">test002 <span class="close-popup">×</span></div>
+            <div class="content">
+                <img id="pic" src="" alt="" style="width: 180px">
+                <div class="info">
+                    <p class="info-tit">test002
+                        <span>课程有效期:
+                            永久有效
+                        </span></p>
+                    <p class="info-pic">课程价格 : <span>￥688</span></p>
+                    <p class="info-new-pic">优惠价格 : <span>￥288</span></p>
+                </div>
+            </div>
+
+            <div class="go-pay"><a href="#" @click="createMyOrder" :loading="editLoading">
+                    确认无误，提交订单</a>
+            </div>
+        </div>
+        <!--支付弹窗- end -->
+        <div class="popup-comment-box">
+
+        </div>
+    </div>
+</div>
+<!-- 页面底部 -->
+<!--底部版权-->
+<!--#include virtual="/include/footer.html"-->
+
+<!--底部版权-->
+</div>
+<script>
+    var courseId = "4028830072638a37017264c7d0920005";
+    var charge="203002";
+    var picUrl = "http://img.yok.com/group1/M00/00/00/wKgDgV7SHryAI2-oAAC-BK6canw865.png";
+    window.onload=function(){
+        document.getElementById("pic").src=picUrl;
+    }
+</script>
+<!--#include virtual="/include/course_detail_dynamic.html"-->
+</body>
+</html>

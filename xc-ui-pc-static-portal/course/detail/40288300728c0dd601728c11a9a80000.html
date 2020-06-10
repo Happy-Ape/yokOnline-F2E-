@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- ����3��meta��ǩ*����*������ǰ�棬�κ��������ݶ�*����*������� -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="pragma" content="no-cache"/>
+    <meta http-equiv="content-type" content="no-cache, must-revalidate"/>
+    <link rel="icon" href="/img/asset-favicon.ico">
+    <title>�ſ�����--Bootstrap�������</title>
+</head>
+<body data-spy="scroll" data-target="#articleNavbar" data-offset="150">
+<!-- ҳ��ͷ�� -->
+<!--#include virtual="/include/header.html"-->
+<div id="body">
+    <!--ҳ��ͷ������sss-->
+    <div class="article-banner">
+        <div class="banner-bg"></div>
+        <div class="banner-info">
+            <div class="banner-left">
+                <p class="tit">Bootstrap�������</p>
+                <p class="pic"><span class="new-pic">
+                    �ػݼ۸�399</span> <span class="old-pic">ԭ�ۣ�899
+                </span></p>
+                <p class="info">
+                    <a href="http://ucenter.yok.com/#/learning/4028e581617f945f01617f9dabc40000/0"
+                       v-if="learnstatus == 1" v-cloak>����ѧϰ</a>
+                    <a href="#" @click="addopencourse" v-if="learnstatus == 2" v-cloak>��������</a>
+                    <a href="#" @click="buy" v-if="learnstatus == 3" v-cloak>��������</a>
+                    <span><em>�Ѷȵȼ�</em>
+             �м�
+                </span>
+                    <span id="score"><em>����</em>5.0��</span>
+                    <span><em>�ڿ�ģʽ</em>
+                      ����ʽѧϰ
+                </span>
+                </p>
+            </div>
+            <div class="banner-rit">
+
+                    <p><img src="http://img.yok.com/group1/M00/00/00/wKgDgV5ThDyAahjaAAAbvL7KPUU962.jpg" alt="" width="270" height="156"></p>
+
+                <p class="vid-act"><span @click="collection" v-if="collectstatus == 0"> <i class="i-heart"></i>�ղ� </span>
+                    <span @click="calCollection" v-if="collectstatus == 1"> <i class="have-heart"></i>ȡ���ղ� </span>
+                    <span @click="share">���� <i class="i-weixin"></i><i class="i-qq"></i></span></p>
+            </div>
+        </div>
+    </div>
+    <div class="article-cont">
+        <div class="tit-list">
+            <a href="javascript:;" id="articleClass" class="active">�γ̽���</a>
+            <a href="javascript:;" id="articleItem">Ŀ¼</a>
+        </div>
+        <div class="article-box">
+            <div class="articleClass" style="display: block">
+                <div class="article-cont">
+                    <div class="article-left-box">
+                        <div class="content">
+
+                            <div class="content-com suit">
+                                <div class="title"><span>������Ⱥ</span></div>
+                                <div class="cont cktop">
+                                    <div>
+                                        <p>����ѧϰǰ���м�֪ʶ�ĳ���Ա</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-com course">
+                                <div class="title"><span>�γ�����</span></div>
+                                <!--#include virtual="/teacher/teacher_info_template01.html"-->
+
+                            </div>
+                            <div class="content-com about">
+                                <div class="title"><span>�γ̽���</span></div>
+                                <div class="cont cktop">
+                                    <div>
+                                        <p>Bootstrap����Twitter�Ƴ���һ��ǰ̨ҳ�濪����ܣ�����ҵ֮��ʹ�ý�Ϊ�㷺���˿�����ܰ����˴�����CSS��JS������룬���԰��������ߣ������ǲ��ó�ҳ�濪���ĳ�����Ա�����ɵ�ʵ��һ��������������Ƶľ�������Ч����</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-com prob">
+                                <div class="title"><span>��������</span></div>
+                                <div class="cont">
+                                    <ul>
+                                        <li class="item"><span class="on-off"><i class="i-chevron-bot"></i> ��ʲôʱ���ܹ����ʿγ���Ƶ��</span>
+                                            <div class="drop-down">
+                                                <p>
+                                                    �γ̰������γ̷���֧���ṩ180��ȫ��׼����ʸ�֤�顣�Զ����ȿγ̽����������ޣ����㲻���ܵ��ͷ�������ޣ�ֻҪ���֤����180���ڡ��ԻỰΪ�����Ŀγ̿���Ҫ�����ڽ�ֹ����ǰ�������죬�����������ˣ�������л����Ժ�Ļ��飬����ɵ��κι���������ת�ơ�</p>
+                                            </div>
+                                        </li>
+                                        <li class="item"><span class="on-off"><i class="i-chevron-bot"></i> �����Ҫ�����ʱ������ɿγ̻���ô����</span>
+                                            <div class="drop-down">
+                                                <p>
+                                                    �γ̰������γ̷���֧���ṩ180��ȫ��׼����ʸ�֤�顣�Զ����ȿγ̽����������ޣ����㲻���ܵ��ͷ�������ޣ�ֻҪ��׬���֤����180���ڡ��ԻỰΪ�����Ŀγ̿���Ҫ�����ڽ�ֹ����ǰ�������죬�����������ˣ�������л����Ժ�Ļ��飬����ɵ��κι���������ת�ơ�</p>
+                                            </div>
+                                        </li>
+                                        <li class="item"><span class="on-off"><i class="i-chevron-bot"></i> ��֧�����ογ�֮���õ�ʲô��</span>
+                                            <div class="drop-down">
+                                                <p>
+                                                    �γ̰������γ̷���֧���ṩ180��ȫ��׼����ʸ�֤�顣�Զ����ȿγ̽����������ޣ����㲻���ܵ��ͷ�������ޣ�ֻҪ��׬���֤����180���ڡ��ԻỰΪ�����Ŀγ̿���Ҫ�����ڽ�ֹ����ǰ�������죬�����������ˣ�������л����Ժ�Ļ��飬����ɵ��κι���������ת�ơ�</p>
+                                            </div>
+                                        </li>
+                                        <li class="item"><span class="on-off"><i class="i-chevron-bot"></i> �˿���������ι涨�ģ�</span>
+                                            <div class="drop-down">
+                                                <p>
+                                                    �γ̰������γ̷���֧���ṩ180��ȫ��׼����ʸ�֤�顣�Զ����ȿγ̽����������ޣ����㲻���ܵ��ͷ�������ޣ�ֻҪ��׬���֤����180���ڡ��ԻỰΪ�����Ŀγ̿���Ҫ�����ڽ�ֹ����ǰ�������죬�����������ˣ�������л����Ժ�Ļ��飬����ɵ��κι���������ת�ơ�</p>
+                                            </div>
+                                        </li>
+                                        <li class="item"><span class="on-off"><i class="i-chevron-bot"></i> ��רҵ����ʦ�����ϴ�����</span>
+                                            <div class="drop-down">
+                                                <p>�еġ�</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="article-right-box">
+                        <div class="about-teach">
+                            <!--������Ϣ-->
+                            <!--#include virtual="/company/company_info_template.html"-->
+
+                        </div>
+                        <div class="learing-box">
+                            <div class="tit">�����ÿε�ͬѧҲ�ڿ�</div>
+                            <div class="item-box">
+                                <div class="item-list hov">
+                                    <div class="infobox">
+                                        <div class="morebox"
+                                             style="background: url(/static/img/widget-titBg.png) no-repeat;">
+
+                                            <p class="top-tit"><a
+                                                        href="http://www.yok.com/course/detail/4028e58161bcf7f40161bcf8b77c0000.html">Spring
+                                                    Cloudʵս</a></p>
+                                            <p class="top-lab">�ſ�����</p>
+                                            <p class="top-num">1134627�β���<span>5.0��</span></p>
+
+                                        </div>
+                                        <a>Spring Cloudʵս</a>
+                                    </div>
+                                </div>
+                                <div class="item-list hov">
+                                    <div class="infobox">
+                                        <div class="morebox"
+                                             style="background: url(/static/img/widget-titBg.png) no-repeat;">
+
+                                            <p class="top-tit"><a
+                                                        href="http://www.yok.com/course/detail/4028e58161bd3b380161bd3bcd2f0000.html">Redis�����ŵ���Ŀʵս</a>
+                                            </p>
+                                            <p class="top-lab">�ſ�����</p>
+                                            <p class="top-num">3462937�β���<span>5.0��</span></p>
+
+                                        </div>
+                                        <a>Redis�����ŵ���Ŀʵս</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="articleItem" style="display: none">
+                <div class="article-cont-catalog">
+                    <div class="article-left-box">
+                        <div class="content">
+                                    <div class="item">
+                                        <div class="title act"><i class="i-chevron-top"></i>��һ��</div>
+                                        <div class="about"></div>
+                                        <div class="drop-down" style="height: 50px;">
+                                            <ul class="list-box">
+                                                        <li @click="checkBuy('4028830070be42280170be4fd608000c')" style="cursor: pointer">��һ��</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="title act"><i class="i-chevron-top"></i>�ڶ���</div>
+                                        <div class="about"></div>
+                                        <div class="drop-down" style="height: 100px;">
+                                            <ul class="list-box">
+                                                        <li @click="checkBuy('4028830070be42280170be500950000d')" style="cursor: pointer">��һ��</li>
+                                                        <li @click="checkBuy('4028830070be42280170be51475b0011')" style="cursor: pointer">�ڶ���</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="title act"><i class="i-chevron-top"></i>������</div>
+                                        <div class="about"></div>
+                                        <div class="drop-down" style="height: 50px;">
+                                            <ul class="list-box">
+                                                        <li @click="checkBuy('4028830070be42280170be503373000e')" style="cursor: pointer">��һ��</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="title act"><i class="i-chevron-top"></i>������</div>
+                                        <div class="about"></div>
+                                        <div class="drop-down" style="height: 50px;">
+                                            <ul class="list-box">
+                                                        <li @click="checkBuy('4028830070be42280170be505f16000f')" style="cursor: pointer">��һ��</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="title act"><i class="i-chevron-top"></i>������</div>
+                                        <div class="about"></div>
+                                        <div class="drop-down" style="height: 50px;">
+                                            <ul class="list-box">
+                                                        <li @click="checkBuy('4028830070be42280170be50852f0010')" style="cursor: pointer">��һ��</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                        </div>
+                    </div>
+                    <div class="article-right-box">
+                        <div class="about-teach">
+                            <!--������Ϣ-->
+                            <!--#include virtual="/company/company_info_template.html"-->
+                        </div>
+                        <div class="learing-box">
+                            <div class="tit">�����ÿε�ͬѧҲ�ڿ�</div>
+                            <div class="item-box">
+                                <div class="item-list hov">
+                                    <div class="infobox">
+                                        <div class="morebox"
+                                             style="background: url(/static/img/widget-titBg.png) no-repeat;">
+
+                                            <p class="top-tit"><a
+                                                        href="http://www.yok.com/course/detail/4028e58161bcf7f40161bcf8b77c0000.html">Spring
+                                                    Cloudʵս</a></p>
+                                            <p class="top-lab">�ſ�����</p>
+                                            <p class="top-num">1134627�β���<span>5.0��</span></p>
+
+                                        </div>
+                                        <a>Spring Cloudʵս</a>
+                                    </div>
+                                </div>
+                                <div class="item-list hov">
+                                    <div class="infobox">
+                                        <div class="morebox"
+                                             style="background: url(/static/img/widget-titBg.png) no-repeat;">
+
+                                            <p class="top-tit"><a
+                                                        href="http://www.yok.com/course/detail/4028e58161bd3b380161bd3bcd2f0000.html">Redis�����ŵ���Ŀʵս</a>
+                                            </p>
+                                            <p class="top-lab">�ſ�����</p>
+                                            <p class="top-num">3462937�β���<span>5.0��</span></p>
+
+                                        </div>
+                                        <a>Redis�����ŵ���Ŀʵս</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup-box" style="display: none">
+        <div class="mask"></div>
+        <!--֧������- start -->
+        <div class="popup-pay-box">
+            <div class="title">Bootstrap������� <span class="close-popup">��</span></div>
+            <div class="content">
+                <img id="pic" src="" alt="" style="width: 180px">
+                <div class="info">
+                    <p class="info-tit">Bootstrap�������
+                        <span>�γ���Ч��:
+                            2019-12-31T16:00:00.000+0000-2020-12-30T16:00:00.000+0000
+                        </span></p>
+                    <p class="info-pic">�γ̼۸� : <span>��899</span></p>
+                    <p class="info-new-pic">�Żݼ۸� : <span>��399</span></p>
+                </div>
+            </div>
+
+            <div class="go-pay"><a href="#" @click="createMyOrder" :loading="editLoading">
+                    ȷ�������ύ����</a>
+            </div>
+        </div>
+        <!--֧������- end -->
+        <div class="popup-comment-box">
+
+        </div>
+    </div>
+</div>
+<!-- ҳ��ײ� -->
+<!--�ײ���Ȩ-->
+<!--#include virtual="/include/footer.html"-->
+
+<!--�ײ���Ȩ-->
+</div>
+<script>
+    var courseId = "4028e581617f945f01617f9dabc40000";
+    var charge="203002";
+    var picUrl = "http://img.yok.com/group1/M00/00/00/wKgDgV5ThDyAahjaAAAbvL7KPUU962.jpg";
+    window.onload=function(){
+        document.getElementById("pic").src=picUrl;
+    }
+</script>
+<!--#include virtual="/include/course_detail_dynamic.html"-->
+</body>
+</html>

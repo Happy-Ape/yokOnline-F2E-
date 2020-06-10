@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>页头</title>
+    <link rel="stylesheet" href="/static/plugins/normalize-css/normalize.css"/>
+    <link rel="stylesheet" href="/static/plugins/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/static/css/page-learing-article.css"/>
+    <link rel="stylesheet" href="/css/page-learing-index.css"/>
+    <link rel="stylesheet" href="/css/page-header.css"/>
+    <link rel="stylesheet" href="/css/el/index.css"/>
+    <link rel="stylesheet" href="/css/main.css"/>
+    <script src="/js/vue/vue.min.js"></script>
+    <script src="/js/querystring/index.js"></script>
+    <script src="/css/el/index.js"></script>
+    <script src="/js/jwt-decode/jwt-decode.min.js"></script>
+    <script src="/js/base64.min.js"></script>
+    <script src="/js/axios/axios.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/public.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="/css/el/index.js"></script>
+
+
+</head>
+<body>
+<div id="app">
+    <!--头部导航-->
+    <header>
+        <div class="learingHeader">
+            <nav class="navbar">
+                <div class="">
+                    <div class="logo"><img src="/img/asset-logoIco.png" width="100%" alt=""></div>
+                    <div class="nav-list">
+                        <ul class="nav navbar-nav">
+                            <li><a href="/" style="color: orangered">首页</a></li>
+                            <li><a href="/course/search">课程</a></li>
+                            <li></li>
+                        </ul>
+                    </div>
+
+                    <div class="sign-in">
+                        <!-- 未登录 -->
+                        <!-- <a href="#">登录 </a> <span> | </span> <a href="#"> 注册</a>-->
+                        <!-- 登录 -->
+                        <!--<a href="#" class="personal"><span class="personalIco"></span>消息</a>-->
+                        <span v-if="logined == true">欢迎您：{{this.user.username}}</span>
+                        <a href="javascript:;"class="personal" @click="logout" v-if="logined == true">退出</a>
+                        <a href="javascript:;" class="personal" @click="showlogin" v-if="logined == false">登陆&nbsp;|&nbsp;注册</a>
+                        <a href="javascript:;" class="personal" @click="gocenter">个人中心</a>
+                        <a href="javascript:;" class="personal" @click="goteach">教学中心</a>
+                        <a href="javascript:;" class="personal" @click="gosystem">系统中心</a>
+                        <!--<a href="#" class="myInfo"><img src="img/asset-myImg.jpg" alt="">个人中心</a>-->
+                    </div>
+                    <!--<div class="starch">
+                        <div><input type="text" class="input-search" placeholder="输入查询关键词"></div>
+                        <div class="searchword"><a href="">搜索</a> </div>
+                    </div>-->
+                    <div class="starch">
+                        <div><input type="text" class="input-search" v-model="keyword" @keyup.enter="search"
+                                    placeholder="输入查询关键词"></div>
+                        <div class="searchword"><a @click="search">搜索</a></div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+    </header>
+</div>
+<script type="text/x-template" id="login">
+    <div>login....</div>
+</script>
+<script>
+
+    var headVm = new Vue({   //创建一个Vue的实例
+        el: "#app", //挂载点是id="app"的地方
+
+        data: {
+            keyword: '',
+            loginFormVisible: false,
+            activeName: 'login',
+            editLoading: false,
+
+            formLabelWidth: '120px',
+            user: {
+                userid: '',
+                username: '',
+                userpic: ''
+            },
+            logined: false
+        },
+        methods: {
+            search() {
+                if (this.keyword === '') {
+                    window.location = "/course/search"
+                } else {
+                    let keyword = encodeURIComponent(this.keyword)
+                    window.location = "/course/search?keyword=" + keyword
+                }
+            },
+            logout: function () {
+                this.$confirm('确认退出吗?', '提示', {}).then(() => {
+                    //跳转到统一登陆
+                    window.location = "http://ucenter.yok.com/#/logout"
+                }).catch(() => {
+
+                });
+            },
+            gocenter: function () {
+                //从sessionStorage中取出当前用户
+                let activeUser = getActiveUser();
+                let uid = getCookie("uid");
+                if (activeUser && uid && uid == activeUser.uid) {
+                    this.logined = true
+                    window.location = "http://ucenter.yok.com";
+                } else {
+                    this.$message.warning('请先登录！');
+                }
+            },
+            goteach: function () {
+                //从sessionStorage中取出当前用户
+                let activeUser = getActiveUser();
+                let uid = getCookie("uid");
+                if (activeUser && uid && uid == activeUser.uid) {
+                    this.logined = true
+                    this.user = activeUser;
+                    let type = this.user.utype;
+                    if (type == "101001") {
+                        this.$message.error('您没有访问权限');
+                        return;
+                    } else {
+                        //window.location ="http://teach.yok.com";
+                        window.location = "http://teach.yok.com";
+                    }
+                } else {
+                    this.$message.warning('请先登录！');
+                }
+            },
+            gosystem: function () {
+                //从sessionStorage中取出当前用户
+                let activeUser = getActiveUser();
+                let uid = getCookie("uid");
+                if (activeUser && uid && uid == activeUser.uid) {
+                    this.logined = true
+                    this.user = activeUser;
+                    let type = this.user.utype;
+                    if (type == "101001" || type == "101002") {
+                        this.$message.error('您没有访问权限');
+                        return;
+                    } else {
+                        //window.location ="http://teach.yok.com";
+                        window.location = "http://system.yok.com";
+                    }
+                } else {
+                    this.$message.warning('请先登录！');
+                }
+            },
+            refresh_user: function () {
+                //从sessionStorage中取出当前用户
+                let activeUser = getActiveUser();
+                //取出cookie中的令牌
+                let uid = getCookie("uid")
+                //console.log(activeUser)
+                if (activeUser && uid && uid == activeUser.uid) {
+                    this.logined = true
+                    this.user = activeUser;
+                } else {
+                    if (!uid) {
+                        return;
+                    }
+                    //请求查询jwt
+                    getjwt().then((res) => {
+                        if (res.success) {
+                            let jwt = res.jwt;
+                            let activeUser = getUserInfoFromJwt(jwt);
+                            //console.log(activeUser)
+                            if (activeUser) {
+                                this.logined = true
+                                this.user = activeUser;
+                                setUserSession("activeUser", JSON.stringify(activeUser))
+                            }
+                        }
+                    })
+                }
+            },
+            resetForm: function (formName) {
+                this.$refs[formName].resetFields();
+            },
+            showlogin: function () {
+                window.location = "http://ucenter.yok.com/#/login?returnUrl=" + Base64.encode(window.location)
+            }
+        },
+        created() {
+
+        },
+        mounted() {
+            //刷新当前用户
+            this.refresh_user()
+        }
+    })
+</script>
+</body>
+</html>

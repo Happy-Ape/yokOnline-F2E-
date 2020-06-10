@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/img/asset-favicon.ico">
+    <title>优课在线网</title>
+
+    <link rel="stylesheet" href="/plugins/normalize-css/normalize.css" />
+    <link rel="stylesheet" href="/plugins/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/page-learing-index.css" />
+    <link rel="stylesheet" href="/css/page-header.css" />
+    <style>
+
+
+        ul, ol, li, dl, dd {
+            margin: 0;
+            padding: 0
+        }
+
+
+        .mod-nav__side-list {
+            width: 400px
+        }
+
+        .mod-nav__side-li {
+            padding: 0px 0 12px
+        }
+
+        .mod-nav__link-nav-second {
+            display: inline-block;
+            vertical-align: middle;
+            font-weight: 700;
+            vertical-align: top;
+            width: 110px;
+            text-align: left
+        }
+
+        .mod-nav__link-nav-second .mod-nav__link-nav-second-link {
+            color: #333
+        }
+
+        .mod-nav__link-nav-second .mod-nav__link-nav-second-link:hover {
+            text-decoration: underline
+        }
+
+        .mod-nav__wrap-nav-third {
+            display: inline-block;
+            vertical-align: middle;
+            /*width: 355px;*/
+            vertical-align: top;
+            *vertical-align: top;
+            _vertical-align: top
+        }
+
+        .mod-nav__link-nav-third {
+            display: inline-block;
+            vertical-align: middle;
+            color: #333;
+            margin-right: 20px;
+            text-align: left;
+            vertical-align: top;
+            margin-bottom: 3px
+        }
+
+        .mod-nav__link-nav-third:hover {
+            text-decoration: underline
+        }
+        .my-class-box > .m-slideTop-personFunc {
+            color: black;
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+            font-size: 16px;
+
+        }
+        .m-slideTop-personFunc > .m-slideTop-personFunc-f > .u-person-container {
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 330px;
+            border-radius: 0px;
+            position: relative;
+            clear: none;
+            display: block;
+            color: black;
+            margin: 0px;
+            padding: 0px;
+            font-size: 16px;
+        }
+        .m-slideTop-personFunc > .m-slideTop-personFunc-f > .u-person-container > .u-person-word > span {
+            line-height: 16px;
+            display: inline-block;
+            width: 100%;
+            font-family: 微软雅黑, "Microsoft YaHei";
+            font-size: 12px;
+            color: #666666;
+            text-align: center;
+            vertical-align: top;
+        }
+        .m-slideTop-personFunc > .m-slideTop-personFunc-f > .u-person-container > .u-person-title > span {
+            padding-top: 10px;
+            line-height: 22px;
+            display: inline-block;
+            width: 100%;
+            font-family: 微软雅黑, "Microsoft YaHei";
+            font-size: 16px;
+            color: #333333;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .m-slideTop-personFunc > .m-slideTop-personFunc-f > .u-person-container > .navLoginBtn.u-person-login > .m-index-person-loginBtn {
+            line-height: 36px;
+            display: inline-block;
+            width: 100%;
+            font-family: 微软雅黑, "Microsoft YaHei";
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            vertical-align: top;
+        }
+        .m-slideTop-personFunc > .m-slideTop-personFunc-f > .u-person-container > .navLoginBtn.u-person-login {
+            left: 20px;
+            top: 250px;
+            width: 160px;
+            height: 36px;
+            border-radius: 0px;
+            position: absolute;
+            clear: none;
+            font-size: 16px;
+            display: block;
+            color: black;
+            #background-color: #00a4ff;
+            border: solid 1px #00a4ff;
+            margin: 0px;
+            padding: 0px;
+            line-height: 36px;
+        }
+        .m-slideTop-personFunc > .m-slideTop-personFunc-f > .u-person-container > .navLoginBtn.u-person-login a {
+            display: block;
+            line-height: 35px;
+        }
+        .m-slideTop-personFunc > .m-slideTop-personFunc-f > .u-person-container > .u-person-word {
+            left: 28px;
+            top: 280px;
+            width: 144px;
+            height: 16px;
+            border-radius: 0px;
+            position: absolute;
+            clear: none;
+            font-size: 16px;
+            display: block;
+            color: black;
+            margin: 0px;
+            padding: 0px;
+            line-height: 16px;
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target="#myNavbar" data-offset="150">
+    <!-- 页面头部 -->
+    <!--#include virtual="/include/header.html"-->
+    <!--页面头部结束-->
+    <!--轮播图-->
+    <!--#include virtual="/include/index_banner.html"-->
+    <!--轮播图结束-->
+    <div class="container">
+        <!--左侧列表导航-->
+        <!--#include virtual="/include/index_category.html"-->
+
+        <div class="my-class-box" style="cursor: default">
+            <div class="m-slideTop-personFunc">
+                <div class="m-slideTop-personFunc-f">
+                    <div class="u-person-container">
+                        <div class="u-person-title"><span>优课在线为您推荐<br>当前火热课程
+                        <img src="img/asset-timg.png" width="20%" alt="">
+                        </span></div>
+                        <div class="title">课程列表</div>
+                        <div class="courselist">
+                            <a href="http://www.yok.com/course/detail/4028e58161bd22e60161bd23672a0001.html" target="_blank">
+                                <p>>Javascript之VueJS</p>
+                            </a>
+                        </div>
+                        <div class="courselist">
+                            <a href="http://www.yok.com/course/detail/402885816243d2dd016243f24c030002.html" target="_blank">
+                            <p>>大数据</p>
+                            </a>
+                        </div>
+                        <div class="courselist">
+                            <a href="http://www.yok.com/course/detail/4028e58161bcf7f40161bcf8b77c0000.html" target="_blank">
+                                <p>>spring cloud实战</p>
+                            </a>
+                        </div>
+                        <div class="courselist">
+                            <a href="http://www.yok.com/course/detail/402883006ffaca47016ffb8ee4350000.html" target="_blank">
+                                <p>>MYSQL入门级教学</p>
+                            </a>
+                        </div>
+                        <div class="navLoginBtn u-person-login" >
+                            <a href="http://ucenter.yok.com" > <span class="m-index-person-loginBtn">点击进入我的课程</span></a>
+                        </div>
+                        <!--<div class="u-person-word"><span>黑马程序员出品</span></div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="recommend-list">
+            <div class="btn-group btn-group-justified">
+
+            </div>
+        </div>
+        <div class="conten-list" style="cursor: default">
+            <div class="Recommend">
+                <div class="title">精品推荐<a href="http://www.yok.com/course/search" class="queryall">查看全部</a></div>
+                <div class="content">
+                    <div class="recom-item">
+                        <a href="http://www.yok.com/course/detail/4028e58161bd3b380161bd3bcd2f0000.html" target="_blank">
+                            <p><img src="http://img.yok.com/group1/M00/00/00/wKgDgV4xUT6AZ0I3AAAvFR1GebQ201.jpg" width="100%" alt=""><span class="lab">HOT</span></p>
+                            <ul>
+                                <li>Redis从入门到项目实战 </li>
+                                <li><span>高级</span> <em> · </em> 2038人在学习</li>
+                            </ul>
+                        </a>
+                    </div>
+                    <div class="recom-item">
+                        <a href="http://www.yok.com/course/detail/4028e58161bcf7f40161bcf8b77c0000.html" target="_blank">
+                            <p><img src="http://img.yok.com/group1/M00/00/00/wKgDgV5TgcmAYqagAAB6ZQgebtM461.jpg" width="100%" alt=""><span class="lab">HOT</span></p>
+                            <ul>
+                                <li>spring cloud实战 </li>
+                                <li><span>高级</span> <em> · </em> 1125人在学习</li>
+                            </ul>
+                        </a>
+                    </div>
+                    <div class="recom-item">
+                        <a href="http://www.yok.com/course/detail/4028830070758de0017075e4ab940006.html" target="_blank">
+                            <p><img src="http://img.yok.com/group1/M00/00/00/wKgDgV5Tg96Af4JBAALgexL7Iyk020.jpg" width="100%" alt=""><span class="lab">HOT</span></p>
+                            <ul>
+                                <li>JAVA多线程与并发实战 </li>
+                                <li><span>高级</span> <em> · </em> 998人在学习</li>
+                            </ul>
+                        </a>
+                    </div>
+                    <div class="recom-item">
+                        <a href="http://www.yok.com/course/detail/4028858162e0bc0a0162e0bfdf1a0000.html" target="_blank">
+                            <p><img src="http://img.yok.com/group1/M00/00/00/wKgDgV5ThAKAC9mWAAEFQP0Z0c8256.jpg" width="100%" alt=""><span class="lab">HOT</span></p>
+                            <ul>
+                                <li>人工智能+python </li>
+                                <li><span>高级</span> <em> · </em> 762人在学习</li>
+                            </ul>
+                        </a>
+                    </div>
+                    <div class="recom-item">
+                        <a href="http://www.yok.com/course/detail/4028e581617f945f01617f9dabc40000.html" target="_blank">
+                            <p><img src="http://img.yok.com/group1/M00/00/00/wKgDgV5ThDyAahjaAAAbvL7KPUU962.jpg" width="100%" alt=""><span class="lab">HOT</span></p>
+                            <ul>
+                                <li>Bootstrap开发框架 </li>
+                                <li><span>中级</span> <em> · </em> 627人在学习</li>
+                            </ul>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="course-box" style="cursor: default">
+                <div class="title">
+                    Java工程师
+                    <a class="queryall" href="http://www.yok.com/course/search" >查看全部</a>
+                </div>
+                <div class="content">
+                    <div class="cont-left">
+                        <img src="img/widget-ind-left.png" width="100%" alt="">
+                    </div>
+                    <div class="cont-right">
+                        <div><img src="img/widget-ind-top.png" width="100%" alt=""></div>
+                        <div class="recom-item">
+                            <a href="http://www.yok.com/course/detail/40281f81640220d601640222665b0001.html" target="_blank">
+                                <p><img src="http://img.yok.com/group1/M00/00/00/wKgDgV5Tg26AJPf3AAC2KrzvgqQ270.jpg" width="100%" alt=""></p>
+                                <ul>
+                                    <li>java零基础入门 </li>
+                                    <li><span>初级</span> <em> · </em> 973人在学习</li>
+                                </ul>
+                            </a>
+                        </div>
+                        <div class="recom-item">
+                            <a href="http://www.yok.com/course/detail/402883006ffaca47016ffb8ee4350000.html" target="_blank">
+                                <p><img src="http://img.yok.com/group1/M00/00/00/wKgDgV5Tg3qASshoAABjn1jeaS4718.jpg" width="100%" alt=""></p>
+                                <ul>
+                                    <li>MYSQL入门级教学 </li>
+                                    <li><span>初级</span> <em> · </em> 832人在学习</li>
+                                </ul>
+                            </a>
+                        </div>
+                        <div class="recom-item">
+                            <a href="http://www.yok.com/course/detail/4028830070758de0017075e4ab940006.html" target="_blank">
+                                <p><img src="http://img.yok.com/group1/M00/00/00/wKgDgV5Tg96Af4JBAALgexL7Iyk020.jpg" width="100%" alt=""></p>
+                                <ul>
+                                    <li>JAVA多线程与并发实战 </li>
+                                    <li><span>高级</span> <em> · </em> 998人在学习</li>
+                                </ul>
+                            </a>
+                        </div>
+                        <div class="recom-item">
+                            <a href="http://www.yok.com/course/detail/4028e58161bcf7f40161bcf8b77c0000.html" target="_blank">
+                                <p><img src="http://img.yok.com/group1/M00/00/00/wKgDgV5TgcmAYqagAAB6ZQgebtM461.jpg" width="100%" alt=""></p>
+                                <ul>
+                                    <li>spring cloud实战 </li>
+                                    <li><span>高级</span> <em> · </em> 1125人在学习</li>
+                                </ul>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-box" style="cursor: default">
+                <div class="title">
+                    前端开发工程师
+                    <a class="queryall" href="http://www.yok.com/course/search">查看全部</a>
+                </div>
+                <div class="content">
+                    <div class="cont-left">
+                        <img src="img/widget-ind-left1.png" width="100%" alt="">
+                    </div>
+                    <div class="cont-right">
+                        <div><img src="img/widget-ind-top1.png" width="100%" alt=""></div>
+                        <div class="recom-item">
+                            <a href="http://www.yok.com/course/detail/4028830070758de0017075d8a1a00000.html" target="_blank">
+                                <p><img src="http://img.yok.com/group1/M00/00/00/wKgDgV5Tg66AJT_FAAB6DkFCXAQ942.jpg" width="100%" alt=""></p>
+                                <ul>
+                                    <li>当Html遇见Css </li>
+                                    <li><span>初级</span> <em> · </em> 1024人在学习</li>
+                                </ul>
+                            </a>
+                        </div>
+                        <div class="recom-item">
+                            <a href="http://www.yok.com/course/detail/4028e58161bd22e60161bd23672a0001.html" target="_blank">
+                                <p><img src="http://img.yok.com/group1/M00/00/00/wKgDgV5ThGWAZoSWAABGvr6Dw5Q178.jpg" width="100%" alt=""></p>
+                                <ul>
+                                    <li>Javascript之VueJS </li>
+                                    <li><span>高级</span> <em> · </em> 714人在学习</li>
+                                </ul>
+                            </a>
+                        </div>
+                        <div class="recom-item">
+                            <a href="http://www.yok.com/course/detail/4028830070758de0017075e02e6a0005.html" target="_blank">
+                                <p><img src="http://img.yok.com/group1/M00/00/00/wKgDgV5Tg8mAFiDPAABqy8x2KGE012.jpg" width="100%" alt=""></p>
+                                <ul>
+                                    <li>异步调用——Ajax </li>
+                                    <li><span>中级</span> <em> · </em> 691人在学习</li>
+                                </ul>
+                            </a>
+                        </div>
+                        <div class="recom-item">
+                            <a href="http://www.yok.com/course/detail/4028830070758de0017075de71aa0004.html" target="_blank">
+                                <p><img src="http://img.yok.com/group1/M00/00/00/wKgDgV5Tg7uAPy9_AAB0XSrmoHo991.png" width="100%" alt=""></p>
+                                <ul>
+                                    <li>JQuery </li>
+                                    <li><span>初级</span> <em> · </em> 787人在学习</li>
+                                </ul>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+
+    </div>
+    <!-- 页面底部 -->
+    <div class="gotop">
+        <a href="#"><i class="glyphicon glyphicon-pencil"></i><span class="hide">问题反馈</span></a>
+        <a href="#top"><i class="glyphicon glyphicon-plane"></i><span class="hide">返回顶部</span></a>
+    </div>
+    <!--底部版权-->
+    <!--#include virtual="/include/footer.html"-->
+    <!--底部版权-->
+    <!-- 页面 css js -->
+
+    <script type="text/javascript" src="plugins/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="plugins/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/widget-travel-index-nav.js"></script>
+    <script>
+        /*$('.teach-item').hover(function() {
+            $(this).find('.teach-info').animate({
+                'height': '100%'
+            }, 500);
+        }, function() {
+            $(this).find('.teach-info').animate({
+                'height': '112px'
+            }, 500);
+        })*/
+
+        $('.gotop a').hover(function() {
+            $(this).find('span').removeClass('hide')
+        }, function() {
+            $(this).find('span').addClass('hide')
+        })
+
+
+        $(function() {
+            $('.interest-box .interest-cont li').click(function() {
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                } else {
+                    $(this).addClass('active');
+                }
+            })
+            $('.mask').click(function() {
+                $('.interest-box').hide();
+            })
+            $('.button .pres').click(function() {
+                $('.interest-box').hide();
+            })
+            $('.button .skip').click(function() {
+                $('.interest-box').hide();
+            })
+        })
+    </script>
+    <script src="js/page-learing-index.js"></script>
+</body>
